@@ -2,6 +2,23 @@
 
 A comprehensive Model Context Protocol (MCP) server for Google Drive, Google Docs, and Google Sheets with full tool support across all Google Drive functions.
 
+[![npm version](https://img.shields.io/npm/v/@pouyanafisi/googledrive-mcp.svg)](https://www.npmjs.com/package/@pouyanafisi/googledrive-mcp)
+
+## Installation
+
+```bash
+# Global install (recommended)
+npm install -g @pouyanafisi/googledrive-mcp
+
+# Or as a project dependency
+npm install @pouyanafisi/googledrive-mcp
+
+# Or clone from source
+git clone https://github.com/pouyanafisi/gdrive-mcp.git
+cd gdrive-mcp
+npm install
+```
+
 ## Features
 
 - **50+ MCP Tools** for complete Google Drive management
@@ -10,14 +27,6 @@ A comprehensive Model Context Protocol (MCP) server for Google Drive, Google Doc
 - **Full CRUD operations** - Create, Read, Update, Delete for all file types
 - **Folder management** - Create hierarchies, move, search
 - **OAuth2 authentication** - Secure Google API access
-
-## Installation
-
-```bash
-git clone https://github.com/pouyanafisi/gdrive-mcp.git
-cd gdrive-mcp
-npm install
-```
 
 ## Setup
 
@@ -50,14 +59,26 @@ This opens a browser for OAuth authentication.
 
 ### MCP Client Configuration
 
-Add to your MCP client (Claude, etc.):
+Add to your MCP client (Claude, Cursor, etc.):
 
 ```json
 {
   "mcpServers": {
     "gdrive": {
-      "command": "node",
-      "args": ["/path/to/gdrive-mcp-server/dist/index.js"]
+      "command": "googledrive-mcp"
+    }
+  }
+}
+```
+
+Or if installed locally:
+
+```json
+{
+  "mcpServers": {
+    "gdrive": {
+      "command": "npx",
+      "args": ["@pouyanafisi/googledrive-mcp"]
     }
   }
 }
