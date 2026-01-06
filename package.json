@@ -1,0 +1,77 @@
+{
+  "name": "gdrive-mcp",
+  "version": "1.0.0",
+  "description": "Full-featured MCP server for Google Drive with 50+ tools - complete CRUD operations for files, folders, Google Docs, Google Sheets, and Google Slides with automatic MIME type detection for 80+ file formats",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "gdrive-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "auth": "node dist/index.js auth",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "type-check": "tsc --noEmit",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "google-drive",
+    "gdrive",
+    "google-docs",
+    "google-sheets",
+    "google-slides",
+    "google-workspace",
+    "drive-api",
+    "docs-api",
+    "sheets-api",
+    "file-management",
+    "cloud-storage",
+    "oauth2",
+    "claude",
+    "anthropic",
+    "ai-tools",
+    "automation",
+    "file-upload",
+    "mime-types"
+  ],
+  "author": "Pouya Nafisi",
+  "homepage": "https://github.com/pouyanafisi/gdrive-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouyanafisi/gdrive-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pouyanafisi/gdrive-mcp/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "google-auth-library": "^9.4.1",
+    "googleapis": "^129.0.0",
+    "open": "^10.0.0",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.0"
+  }
+}
+
